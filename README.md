@@ -20,7 +20,7 @@ This is an experimental project and may perform highly risky operations, includi
 You can easily install the CLI version of `smgg-go` using the following command:
 
 ```shell
-go install github.com/u-na-gi/smggcli
+go install -v github.com/u-na-gi/smgg-go/smggcli@latest
 ```
 
 This command downloads the CLI version of `smgg-go`, enabling you to use the struct-merging-code-generator directly from your command line.
