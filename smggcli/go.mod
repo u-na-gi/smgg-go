@@ -2,7 +2,7 @@ module github.com/u-na-gi/smggcli
 
 go 1.22.1
 
-require github.com/u-na-gi/smgg-go v0.0.0-20240405054722-cfaf43331708
+require github.com/u-na-gi/smgg-go v0.0.0-20240405055645-f4692137b36c
 
 require (
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
