@@ -1,4 +1,4 @@
-package structmergingcodegeneratorgo
+package smgg
 
 import (
 	"go/ast"

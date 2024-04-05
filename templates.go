@@ -1,4 +1,4 @@
-package structmergingcodegeneratorgo
+package smgg
 
 // コード生成のためのテンプレート
 
