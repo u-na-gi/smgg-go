@@ -1,8 +1,6 @@
 package smggclilib
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
 	smgg "github.com/u-na-gi/smgg-go"
 )
@@ -21,8 +19,10 @@ var genCmd = &cobra.Command{
 			if err != nil {
 				panic(err)
 			}
-			// err = smgg.WriteSource(sb)
-			fmt.Printf("%#v\n", sb)
+
+			if err := sb.Generate(); err != nil {
+				panic(err)
+			}
 		}
 	},
 }

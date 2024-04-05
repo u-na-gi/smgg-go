@@ -76,3 +76,18 @@ func WalkingCurrentProject() ([]string, error) {
 
 	return files, nil
 }
+
+// SourceBuilderを受け取り、ファイルを生成する
+func (sb *SourceBuilder) Generate() error {
+	file, err := os.Create(filepath.Join(sb.PackagePath, sb.FileName))
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+
+	_, err = file.WriteString(sb.Source)
+	if err != nil {
+		return err
+	}
+	return nil
+}

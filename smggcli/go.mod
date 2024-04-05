@@ -1,4 +1,4 @@
-module github.com/u-na-gi/smgg-cli-go
+module github.com/u-na-gi/smggcli
 
 go 1.22.1
 
