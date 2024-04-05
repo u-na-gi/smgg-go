@@ -50,7 +50,7 @@ func CreateSource(sourcePath string) (*SourceBuilder, error) {
 	// 返り値はpackageが存在するパス, ファイル名, 生成したコード
 	return &SourceBuilder{
 		PackagePath: filepath.Dir(sourcePath),
-		FileName:    fmt.Sprintf("%s.generated.go", packageName),
+		FileName:    fmt.Sprintf("%s.smgg.gen.go", packageName),
 		Source:      tp.GetSource(),
 	}, nil
 }
