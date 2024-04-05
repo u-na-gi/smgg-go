@@ -4,6 +4,11 @@
 
 This tool is especially useful for projects that require the merging of struct fields from various sources or for simplifying the process of combining data from similar structs.
 
+## Warning
+
+This is an experimental project and may perform highly risky operations, including overwriting existing files or generating unexpected files. Please use it with caution and at your own risk.
+
+
 ### Features
 
 - Generates setters for merging structs of the same type.

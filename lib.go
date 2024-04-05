@@ -38,7 +38,7 @@ func CreateSource(sourcePath string) (*SourceBuilder, error) {
 
 		tp.ParseAndUpdateSource(FuncUpsertAllowDeleteStartTmpl, TemplateFuncStructArg{TypeName: structName})
 		for fieldName, zeroValue := range conditions[structName] {
-			tp.ParseAndUpdateSource(FuncUpsertConditionTmpl, TemplateUpsertConditionStructArg{
+			tp.ParseAndUpdateSource(FuncUpsertAllowDeleteTmpl, TemplateUpsertConditionStructArg{
 				FieldName: fieldName,
 				ZeroValue: zeroValue,
 			})
