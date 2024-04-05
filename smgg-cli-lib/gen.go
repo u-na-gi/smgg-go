@@ -14,15 +14,22 @@ var genCmd = &cobra.Command{
 		if err != nil {
 			panic(err)
 		}
-		for _, sourcePath := range sourcePaths {
-			sb, err := smgg.CreateSource(sourcePath)
-			if err != nil {
-				panic(err)
-			}
+		byPackageGenSource, err := smgg.AggregateByPackageName(sourcePaths)
+		if err != nil {
+			panic(err)
+		}
 
-			if err := sb.Generate(); err != nil {
-				panic(err)
+		for _, sourceBuilder := range byPackageGenSource {
+			source := sourceBuilder.Source
+			for _, sourcePath := range sourceBuilder.SourcePaths {
+				crs, err := source.CreateSource(sourcePath)
+				if err != nil {
+					panic(err)
+				}
+				sourceBuilder.Source = crs
 			}
+			sourceBuilder.Generate()
+
 		}
 	},
 }

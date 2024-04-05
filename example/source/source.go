@@ -23,3 +23,11 @@ type Person2 struct {
 		Teeth int
 	}
 }
+
+type person2 struct {
+	Name  string
+	Age   int
+	Shark *struct {
+		Teeth int
+	}
+}

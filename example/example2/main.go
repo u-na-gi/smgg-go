@@ -1,4 +1,4 @@
-package main
+package example2
 
 type A struct {
 	Name    string

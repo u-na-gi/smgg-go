@@ -10,6 +10,7 @@ type genSourcer struct {
 }
 
 type GenSourcer interface {
+	CreateSource(sourcePath string) (GenSourcer, error)
 	GetSource() string
 	ParseAndUpdateSource(tmpl GenSetterTemplate, data any) error
 }
