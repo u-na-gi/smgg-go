@@ -21,7 +21,7 @@ const FuncUpsertStartTmpl GenSetterTemplate = `
 // If an entry exists in both, the source's value overwrites the target's.
 // Entries present in the target but not in the source are preserved.
 // Both target and source must be of the same type.
-func MergeUpsert{{.TypeName}}(target {{.TypeName}}, source {{.TypeName}}) {{.TypeName}} {
+func MergeUpsert{{.TypeName}}(target *{{.TypeName}}, source *{{.TypeName}}) *{{.TypeName}} {
 `
 
 const FuncUpsertAllowDeleteStartTmpl GenSetterTemplate = `
@@ -29,7 +29,7 @@ const FuncUpsertAllowDeleteStartTmpl GenSetterTemplate = `
 // does not exist in the target object, it will be added. If the target object already contains
 // a value from the source object, it will be overwritten with the value from the source object.
 // Both the target and source objects must be of the same type.
-func MergeUpsertAllowDelete{{.TypeName}}(target {{.TypeName}}, source {{.TypeName}}) {{.TypeName}} {
+func MergeUpsertAllowDelete{{.TypeName}}(target *{{.TypeName}}, source *{{.TypeName}}) *{{.TypeName}} {
 `
 
 type TemplateUpsertConditionStructArg struct {
