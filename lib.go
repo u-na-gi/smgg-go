@@ -57,7 +57,7 @@ func (tp *genSourcer) CreateSource(sourcePath string) (GenSourcer, error) {
 		for fieldName, zeroValue := range conditions[structName] {
 			tp.ParseAndUpdateSource(FuncUpsertConditionTmpl, TemplateUpsertConditionStructArg{
 				FieldName: fieldName,
-				ZeroValue: zeroValue,
+				ZeroValue: zeroValue.FieldValue,
 			})
 		}
 		tp.ParseAndUpdateSource(FuncEndTmpl, TemplateFuncStructArg{TypeName: structName})
@@ -66,7 +66,7 @@ func (tp *genSourcer) CreateSource(sourcePath string) (GenSourcer, error) {
 		for fieldName, zeroValue := range conditions[structName] {
 			tp.ParseAndUpdateSource(FuncUpsertAllowDeleteTmpl, TemplateUpsertConditionStructArg{
 				FieldName: fieldName,
-				ZeroValue: zeroValue,
+				ZeroValue: zeroValue.FieldValue,
 			})
 		}
 		tp.ParseAndUpdateSource(FuncEndTmpl, TemplateFuncStructArg{TypeName: structName})
